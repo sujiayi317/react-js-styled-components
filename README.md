@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Learn styled components
+`npm i styled-components` to install the library
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
