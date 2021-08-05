@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from './components/Button';
 
+
 const MainWrapper = styled.section`
   width: 100%;
   max-width: 1200px;
@@ -20,7 +21,9 @@ const PaginationWrapper = styled.div`
   }};
 `;
 
-const Link = styled.a`
+const Link = styled.a.attrs((props) => ({
+  target: '_blank',
+}))`
   color: violet;
   font-size: 1.6rem;
 `;
@@ -36,8 +39,8 @@ export default function App() {
         <Button>Page 2</Button>
         <Button>Page 4</Button>
       </PaginationWrapper>
-      <Link href='https://www.google.com' target='_blank'>One Link</Link>
-      <Link href='https://www.google.com' target='_blank'>Another Link</Link>
+      <Link href='https://www.google.com'>One Link</Link>
+      <Link href='https://www.google.com'>Another Link</Link>
     </MainWrapper>
   );
 }
