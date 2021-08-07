@@ -39,6 +39,11 @@ const NavigationStyled = styled.nav`
       a {
         display: block;
         z-index: 10;
+        padding: .35rem 0;
+        text-transform: uppercase;
+        transition: all .4s ease-in-out;
+        font-weight: 600;
+        letter-spacing: 1px;
         &:hover {
           cursor: pointer;
         }
@@ -83,7 +88,7 @@ const Navigation = () => {
       </div>
       <ul className='nav-items'>
         <li className='nav-item'>
-          <NavLink to='/home' activeClassName='active-class'>
+          <NavLink to='/' activeClassName='active-class'>
             Home
           </NavLink>
         </li>
