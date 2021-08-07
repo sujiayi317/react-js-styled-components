@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
 import { MainLayout } from '../styles/Layout';
+import Title from '../Components/Title';
+import ImageSection from '../Components/ImageSection';
 
 const AboutStyled = styled.section``;
 
@@ -8,7 +10,8 @@ const AboutPage = () => {
   return (
     <MainLayout>
       <AboutStyled>
-        <h1>Hello About</h1>
+        <Title title={'About Me'} span={'About Me'} />
+        <ImageSection />
       </AboutStyled>
     </MainLayout>
   );
