@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Navigation from './Navigation'
 
 const SidebarStyled = styled.div`
-  width: 16.3rem;
+  width: 12.3rem;
   height: 100vh;
   position: fixed;
   background-color: var(--sidebar-dark-color);
