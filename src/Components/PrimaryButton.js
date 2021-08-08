@@ -10,16 +10,21 @@ const PrimaryButtonStyled = styled.a`
   font-size: inherit;
   position: relative;
   text-transform: uppercase;
-  &:hover::after {
+  &::after {
     content: '';
     position: absolute;
-    width: 100%;
-    height: .3rem;
-    background-color: var(--white-color);
+    width: 0;
+    height: .2rem;
     left: 0;
     bottom: 0;
     transition: all .4s ease-in-out;
+    opacity: 0.7;
 
+  }
+  &:hover::after {
+    
+    width: 100%;
+    background-color: var(--white-color);
   }
 `;
 

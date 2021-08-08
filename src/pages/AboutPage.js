@@ -3,6 +3,7 @@ import React from 'react';
 import { MainLayout } from '../styles/Layout';
 import Title from '../Components/Title';
 import ImageSection from '../Components/ImageSection';
+import ServicesSection from '../Components/ServicesSection';
 
 const AboutStyled = styled.section``;
 
@@ -12,6 +13,7 @@ const AboutPage = () => {
       <AboutStyled>
         <Title title={'About Me'} span={'About Me'} />
         <ImageSection />
+        <ServicesSection />
       </AboutStyled>
     </MainLayout>
   );

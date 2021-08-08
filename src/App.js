@@ -14,7 +14,7 @@ const MainContentStyled = styled.main`
   margin-left: 12.3rem;
   min-height: 100vh;
 
-  .lines {
+  /* .lines {
     position: absolute;
     min-height: 100vh;
     width: 100%;
@@ -29,7 +29,7 @@ const MainContentStyled = styled.main`
       min-height: 100vh;
       background-color: var(--border-color);
     }
-  }
+  } */
 `;
 
 function App() {
@@ -37,12 +37,12 @@ function App() {
     <div>
       <Sidebar />
       <MainContentStyled className='main-content'>
-        <div className='lines'>
+        {/* <div className='lines'>
           <div className='line1'></div>
           <div className='line2'></div>
           <div className='line3'></div>
           <div className='line4'></div>
-        </div>
+        </div> */}
         <Switch>
           <Route path='/' exact>
             <HomePage />
