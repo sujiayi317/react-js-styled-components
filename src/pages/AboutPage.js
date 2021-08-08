@@ -4,6 +4,7 @@ import { MainLayout } from '../styles/Layout';
 import Title from '../Components/Title';
 import ImageSection from '../Components/ImageSection';
 import ServicesSection from '../Components/ServicesSection';
+import ReviewsSection from '../Components/ReviewsSection';
 
 const AboutStyled = styled.section``;
 
@@ -14,6 +15,7 @@ const AboutPage = () => {
         <Title title={'About Me'} span={'About Me'} />
         <ImageSection />
         <ServicesSection />
+        <ReviewsSection />
       </AboutStyled>
     </MainLayout>
   );

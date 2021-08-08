@@ -9,31 +9,30 @@ const TitleStyled = styled.div`
     font-weight: 600;
     text-transform: uppercase;
     position: relative;
-    padding-bottom: .6rem;
+    padding-bottom: 0.6rem;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: 0;
       width: 12rem;
-      height: .33rem;
+      height: 0.33rem;
       border-radius: 15px;
       background-color: var(--background-light-color-2);
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
+      left: 0;
       bottom: 0;
       width: 2rem;
-      height: .33rem;
+      height: 0.33rem;
       border-radius: 15px;
       background-color: var(--background-light-color-2);
-      left: 0;
-
     }
     span {
       font-weight: 700;
-      color: rgba(25, 29, 43, .44);
+      color: rgba(25, 29, 43, 0.44);
       font-size: 5rem;
       position: absolute;
       left: 0;
@@ -47,7 +46,10 @@ const Title = ({ title, span }) => {
   return (
     <TitleStyled>
       <h2>
-        {title} <b><span>{span}</span></b>
+        {title}{' '}
+        <b>
+          <span>{span}</span>
+        </b>
       </h2>
     </TitleStyled>
   );
