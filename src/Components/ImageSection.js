@@ -1,16 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import resume from '../img/resume.jpg';
+import PrimaryButton from './PrimaryButton';
 
 const ImageSectionStyled = styled.div`
   margin-top: 2rem;
   display: flex;
   .left-content {
+    width: 100%;
+    height: 60vh;
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   .right-content {
+    padding-left: 1rem;
+
     h4 {
       font-size: 2rem;
       color: var(--white-color);
@@ -23,6 +30,7 @@ const ImageSectionStyled = styled.div`
     }
     .about-info {
       display: flex;
+      padding-bottom: 1.3rem;
       .info-title {
         padding-right: 3rem;
         p {
@@ -76,6 +84,7 @@ const ImageSection = () => {
             <p>Freelance</p>
           </div>
         </div>
+        <PrimaryButton title={'Download CV'} />
       </div>
     </ImageSectionStyled>
   );
