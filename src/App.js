@@ -1,49 +1,100 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import Sidebar from './Components/Sidebar';
+import styled from 'styled-components';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ResumePage from './pages/ResumePage';
 import PortfoliosPage from './pages/PortfoliosPage';
 import BlogsPage from './pages/BlogsPage';
 import ContactPage from './pages/ContactPage';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import MenuIcon from '@material-ui/icons/Menu';
+import { Route, Switch as Switching } from 'react-router';
+import Switch from '@material-ui/core/Switch';
+import { IconButton } from '@material-ui/core';
 
 const MainContentStyled = styled.main`
   position: relative;
   margin-left: 12.3rem;
   min-height: 100vh;
-
-  /* .lines {
+  @media screen and (max-width: 1200px) {
+    margin-left: 0;
+  }
+  .lines {
     position: absolute;
-    min-height: 100vh;
+    min-height: 100%;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-
-    .line1,
-    .line2,
-    .line3,
-    .line4 {
+    opacity: 0.4;
+    z-index: -1;
+    .line-1,
+    .line-2,
+    .line-3,
+    .line-4 {
       width: 1px;
       min-height: 100vh;
       background-color: var(--border-color);
     }
-  } */
+  }
 `;
 
 function App() {
+  const [theme, setTheme] = useState('dark-theme');
+  const [checked, setChecked] = useState(false);
+  const [navToggle, setNavToggle] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme]);
+
+  const themeToggler = () => {
+    if (theme === 'light-theme') {
+      setTheme('dark-theme');
+      setChecked(false);
+    } else {
+      setTheme('light-theme');
+      setChecked(true);
+    }
+  };
+
   return (
-    <div>
-      <Sidebar />
-      <MainContentStyled className='main-content'>
-        {/* <div className='lines'>
-          <div className='line1'></div>
-          <div className='line2'></div>
-          <div className='line3'></div>
-          <div className='line4'></div>
-        </div> */}
-        <Switch>
+    <div className='App'>
+      <Sidebar navToggle={navToggle} />
+
+      <div className='theme'>
+        <div className='light-dark-mode'>
+          <div className='left-content'>
+            <Brightness4Icon />
+          </div>
+          <div className='right-content'>
+            <Switch
+              value=''
+              checked={checked}
+              inputProps={{ 'aria-label': '' }}
+              size='medium'
+              onClick={themeToggler}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className='ham-burger-menu'>
+        <IconButton onClick={() => setNavToggle(!navToggle)}>
+          <MenuIcon />
+        </IconButton>
+      </div>
+
+      <MainContentStyled>
+        <div className='lines'>
+          <div className='line-1'></div>
+          <div className='line-2'></div>
+          <div className='line-3'></div>
+          <div className='line-4'></div>
+        </div>
+
+        <Switching>
           <Route path='/' exact>
             <HomePage />
           </Route>
@@ -62,9 +113,10 @@ function App() {
           <Route path='/contact' exact>
             <ContactPage />
           </Route>
-        </Switch>
+        </Switching>
       </MainContentStyled>
     </div>
   );
 }
+
 export default App;

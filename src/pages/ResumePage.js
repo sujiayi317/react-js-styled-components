@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Skills from '../Components/Skills';
+import { MainLayout } from '../styles/Layout';
+import Resume from '../Components/Resume';
 
-const ResumePage = () => {
+function ResumePage() {
   return (
-    <div>
-      ResumePage
-    </div>
-  )
+    <MainLayout>
+      <Skills />
+      <Resume />
+    </MainLayout>
+  );
 }
 
-export default ResumePage
+export default ResumePage;

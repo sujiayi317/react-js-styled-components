@@ -69,7 +69,7 @@ const HomePage = () => {
       </div>
       <div className='typography'>
         <h1>
-          Hi I'm <span>Jiayi Su</span>
+          Hi, I'm <span>Jiayi Su</span>
         </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem fugiat
